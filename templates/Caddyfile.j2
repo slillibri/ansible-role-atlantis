@@ -5,7 +5,7 @@
     reverse_proxy * 127.0.0.1:{{ oauth2_proxy_port }}
 
     log {
-        output file /var/log/caddy.log {
+        output file /var/log/caddy/caddy.log {
             roll_size 100mb
             roll_keep 10
             roll_keep_for 720h
