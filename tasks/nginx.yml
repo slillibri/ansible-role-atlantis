@@ -15,7 +15,7 @@
     dest=/etc/nginx/sites-enabled/atlantis
     src=/etc/nginx/sites-available/atlantis.cfg
     state=link
-  notify Reload Nginx
+  notify: Reload Nginx
 - name: Delete default
   file:
     state: absent
