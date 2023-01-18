@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+    - name: start nginx
+      service:
+        name: nginx
+        state: started
+    - name: Render nginx config files
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/sites-available/atlantis.cfg
+      notify: Reload Nginx
