@@ -4,6 +4,11 @@
     name: caddy
     state: reloaded
 
+- name: Reload Nginx
+  service:
+    name: nginx
+    state: reloaded
+
 - name: Restart Atlantis
   service:
     name: atlantis

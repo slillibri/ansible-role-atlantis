@@ -1,12 +1,16 @@
 ---
 - name: Setup Atlantis
-  include: atlantis.yml
+  include_tasks: atlantis.yml
   tags: setup_atlantis
 
-- name: Setup Caddy
-  include: caddy.yml
-  tags: setup_caddy
+# - name: Setup Caddy
+#   include_tasks: caddy.yml
+#   tags: setup_caddy
 
+- name: Setup Nginx
+  include_tasks: nginx.yml
+  tags: setup_nginx
+  
 - name: Setup Oauth2 Proxy
-  include: oauth2-proxy.yml
+  include_tasks: oauth2-proxy.yml
   tags: setup_oauth2_proxy
